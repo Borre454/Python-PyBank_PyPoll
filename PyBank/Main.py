@@ -1,6 +1,7 @@
 import os
 import csv
 
+
 csvpath = os.path.join('budget_data.csv')
 
 with open(csvpath, newline='') as csvfile:
@@ -52,10 +53,14 @@ with open(csvpath, newline='') as csvfile:
 
     print("    Total Months: " + str(count))
     print("    Net Total: $" + str(p_n))
-    print("    Average Change: " + str(sum(diff) / len(diff)))
+    print("    Average Change: " + str(round((sum(diff) / len(diff)), 4)))
     print("    Greatest Increase: " +list1[incrValIndex] + ' ($'+ str(incrVal)+')')
     print("    Greatest Decrease: " +list1[decrValIndex] + ' ($'+ str(decrVal)+')')
     print('---------------------------------------------------')
     print()
     print()
-    csvreader.to_csv('results.csv')
+
+    #output_path = os.path.join("PyBank_Results.csv")
+    #with open(output_path, 'w', newline='') as w:
+    #    writer = csv.writer(w)
+     #   writer.writerow()
