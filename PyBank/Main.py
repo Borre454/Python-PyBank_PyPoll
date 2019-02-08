@@ -60,7 +60,14 @@ with open(csvpath, newline='') as csvfile:
     print()
     print()
 
-    #output_path = os.path.join("PyBank_Results.csv")
-    #with open(output_path, 'w', newline='') as w:
-    #    writer = csv.writer(w)
-     #   writer.writerow()
+    file = open("PyBank_Results.txt","w")
+    file.write('---------------------------------------------------\n')
+    file.write('                Financial Analysis\n')
+    file.write('---------------------------------------------------\n')
+    file.write("    Total Months: " + str(count)+'\n')
+    file.write("    Net Total: $" + str(p_n)+'\n')
+    file.write("    Average Change: " + str(round((sum(diff) / len(diff)), 4))+'\n')
+    file.write("    Greatest Increase: " +list1[incrValIndex] + ' ($'+ str(incrVal)+')\n')
+    file.write("    Greatest Decrease: " +list1[decrValIndex] + ' ($'+ str(decrVal)+')\n')
+    file.write('---------------------------------------------------')
+    file.close()

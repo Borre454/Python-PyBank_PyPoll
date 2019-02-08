@@ -66,3 +66,18 @@ with open(csvpath, newline='') as csvfile:
     winner()
     print('---------------------------------------------------')
     print()
+    
+
+    file = open("PyPoll_Results.txt","w")
+    file.write('---------------------------------------------------\n')
+    file.write('                Election Results\n')
+    file.write('---------------------------------------------------\n')
+    file.write("    Total Votes: " + str(votes)+'\n')
+    file.write('---------------------------------------------------'+'\n')
+    file.write(candidates[0] + ": " + str(round(cand1_perc, 4)) + "% (" + str(votes_cand1)+ ")"+'\n')
+    file.write(candidates[1] + ": " + str(round(cand2_perc, 4)) + "% (" + str(votes_cand2)+ ")"+'\n')
+    file.write(candidates[2] + ": " + str(round(cand3_perc, 4)) + "% (" + str(votes_cand3)+ ")"+'\n')
+    file.write(candidates[3] + ": " + str(round(cand4_perc, 4)) + "% (" + str(votes_cand4)+ ")"+'\n')
+    file.write(str(winner())+'\n')
+    file.write('---------------------------------------------------')
+    file.close()
