@@ -1,5 +1,5 @@
 # Python Challenge
-First Python code written
+First Python code
 
 ## PyBank
 Tasked with creating a Python script that analyzes the records to calculate each of the following:
